@@ -56,12 +56,8 @@ class _ProfilePageState extends State<ProfilePage> {
               Row(
                 children: [
                   IconButton(
-                    onPressed: () async {
-                      if (await canLaunchUrlString(link)) {
-                        await launchUrlString(link);
-                      } else {
-                        throw 'Could not launch $link';
-                      }
+                    onPressed: () {
+                      launchUrlString(link);
                     },
                     icon: const Icon(
                       FontAwesomeIcons.github,

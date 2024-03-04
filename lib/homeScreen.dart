@@ -48,27 +48,27 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Padding(
                     padding: const EdgeInsets.all(10),
                     child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(
-                              MediaQuery.of(context).size.height * .2),
-                          border: Border.all(
-                            color: Colors
-                                .deepPurpleAccent, // Choose your desired border color
-                            width: 3.0, // Choose your desired border width
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(
+                            MediaQuery.of(context).size.height * .2),
+                        border: Border.all(
+                          color: Colors
+                              .deepPurpleAccent, // Choose your desired border color
+                          width: 3.0, // Choose your desired border width
+                        ),
+                      ),
+                      child: Container(
+                        width: MediaQuery.of(context).size.height * .3,
+                        height: MediaQuery.of(context).size.height * .3,
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                            alignment: Alignment.center,
+                            image: AssetImage('images/image.jpg'),
+                            fit: BoxFit.cover,
                           ),
                         ),
-                        child: Container(
-                          width: MediaQuery.of(context).size.height * .3,
-                          height: MediaQuery.of(context).size.height * .3,
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                              alignment: Alignment.center,
-                              image: AssetImage('images/image.jpg'),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
+                      ),
                     ),
                   ),
                 ),
