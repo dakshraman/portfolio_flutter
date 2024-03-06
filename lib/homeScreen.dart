@@ -2,8 +2,6 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:portfolio_flutter/main.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -30,8 +28,9 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         body: Center(
           child: Container(
-            height: MediaQuery.of(context).size.height * .8,
+            height: MediaQuery.of(context).size.height * .7,
             width: MediaQuery.of(context).size.width * .8,
+            alignment: Alignment.center,
             //margin: const EdgeInsets.only(top: 100, bottom: 100, left: 50, right: 50),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
@@ -40,8 +39,10 @@ class _MyHomePageState extends State<MyHomePage> {
             child: SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
+                    alignment: Alignment.center,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       color: Colors.deepPurple,
@@ -74,9 +75,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * .03),
-                  Column(
+                  const Divider(
+                    thickness: 2,
+                  ),
+                  const Column(
                     children: [
-                      const Row(
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
@@ -89,7 +93,12 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ],
                       ),
-                      const Row(
+                      Divider(
+                        thickness: 1,
+                        indent: 20,
+                        endIndent: 20,
+                      ),
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
@@ -102,118 +111,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ],
                       ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.02,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        padding: const EdgeInsets.only(
-                            top: 10, bottom: 10, left: 10, right: 10),
-                        child: Wrap(
-                          alignment: WrapAlignment.center,
-                          spacing: 10,
-                          children: [
-                            GestureDetector(
-                              onTap: () {
-                                launchUrl(fb);
-                              },
-                              child: Image.asset(
-                                'images/facebook.png',
-                                width: 30,
-                                height: 30,
-                              ),
-                            ),
-                            const SizedBox(width: 10),
-                            GestureDetector(
-                              onTap: () {
-                                launchUrl(tw);
-                              },
-                              child: Image.asset(
-                                'images/twitter.png',
-                                width: 30,
-                                height: 30,
-                              ),
-                            ),
-                            const SizedBox(width: 10),
-                            GestureDetector(
-                              onTap: () {
-                                launchUrl(ig);
-                              },
-                              child: Image.asset(
-                                'images/instagram.png',
-                                width: 30,
-                                height: 30,
-                              ),
-                            ),
-                            const SizedBox(width: 10),
-                            GestureDetector(
-                              onTap: () {
-                                launchUrl(git);
-                              },
-                              child: Image.asset(
-                                'images/github.png',
-                                width: 30,
-                                height: 30,
-                              ),
-                            ),
-                            const SizedBox(width: 10),
-                            GestureDetector(
-                              onTap: () {
-                                launchUrl(li);
-                              },
-                              child: Image.asset(
-                                'images/linkedin.png',
-                                width: 30,
-                                height: 30,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.02,
-                      ),
-                      const Text(
-                        "Technologies",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 221, 209, 255),
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),
-                      ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.02,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        padding: const EdgeInsets.only(
-                            top: 10, bottom: 10, left: 10, right: 10),
-                        child: Wrap(
-                          alignment: WrapAlignment.center,
-                          spacing: 10,
-                          children: [
-                            Image.asset('images/flutter.png',
-                                width: 30, height: 30),
-                            Image.asset('images/dart.png',
-                                width: 30, height: 30),
-                            Image.asset('images/firebase.png',
-                                width: 30, height: 30),
-                            Image.asset('images/python.png',
-                                width: 30, height: 30),
-                            Image.asset('images/reactjs.png',
-                                width: 30, height: 30),
-                            Image.asset('images/wordpress.png',
-                                width: 30, height: 30),
-                            Image.asset('images/shopify.png',
-                                width: 30, height: 30),
-                          ],
-                        ),
+                      Divider(
+                        thickness: 2,
                       ),
                     ],
                   ),

@@ -14,10 +14,10 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  projetCard(lang, title, description, link) {
+  projetCard(lang, title, description, link, live) {
     return Container(
       width: MediaQuery.of(context).size.width * 0.8,
-      height: 220,
+      height: 210,
       child: Card(
         elevation: 20,
         color: Colors.deepPurple,
@@ -33,7 +33,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   fontSize: 20,
                 ),
               ),
-              const SizedBox(
+              const Divider(
                 height: 10,
               ),
               Text(
@@ -43,14 +43,14 @@ class _ProfilePageState extends State<ProfilePage> {
                     fontSize: 30,
                     fontWeight: FontWeight.w700),
               ),
-              const SizedBox(
+              const Divider(
                 height: 3,
               ),
               Text(
                 description,
                 style: const TextStyle(color: Colors.white70, fontSize: 16),
               ),
-              const SizedBox(
+              const Divider(
                 height: 10,
               ),
               Row(
@@ -61,6 +61,15 @@ class _ProfilePageState extends State<ProfilePage> {
                     },
                     icon: const Icon(
                       FontAwesomeIcons.github,
+                      color: Colors.white,
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      launchUrlString(live);
+                    },
+                    icon: const Icon(
+                      FontAwesomeIcons.link,
                       color: Colors.white,
                     ),
                   )
@@ -96,17 +105,34 @@ class _ProfilePageState extends State<ProfilePage> {
                 'Messager',
                 'Chatting Application',
                 'https://github.com/dakshraman/Messager',
+                'https://dakshraman.github.io/Messager/',
+              ),
+              projetCard(
+                'Flutter',
+                'Portfolio',
+                'A Portfolio App',
+                'https://github.com/dakshraman/portfolio_flutter',
+                'https://github.com/dakshraman/portfolio_flutter/releases/download/1.1.0/app-release.apk',
+              ),
+              projetCard(
+                'Flutter',
+                'Calculator',
+                'A Calculator App',
+                'https://github.com/dakshraman/Calculator',
+                'https://github.com/dakshraman/portfolio_flutter/releases/download/1.1.0/app-release.apk',
               ),
               projetCard(
                 'HTML,CSS,JS',
                 'Weather Application ',
                 'Weather Forecast Web App',
                 'https://github.com/dakshraman/Weather_forecast_web_application',
+                'https://dakshraman.github.io/Weather_forecast_web_application/',
               ),
               projetCard(
                 'Python',
                 'Virtual Assistant',
                 'Virtual assistant for desktop',
+                'https://github.com/dakshraman/Virtual-Assistant',
                 'https://github.com/dakshraman/Virtual-Assistant',
               ),
             ],
