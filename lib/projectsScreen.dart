@@ -119,7 +119,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 'Calculator',
                 'A Calculator App',
                 'https://github.com/dakshraman/Calculator',
-                'https://github.com/dakshraman/portfolio_flutter/releases/download/1.1.0/app-release.apk',
+                'https://github.com/dakshraman/Calculator/releases/download/1.1.0/app-release.apk',
               ),
               projetCard(
                 'HTML,CSS,JS',
