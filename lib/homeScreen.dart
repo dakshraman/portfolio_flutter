@@ -54,8 +54,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           borderRadius: BorderRadius.circular(
                               MediaQuery.of(context).size.height * .2),
                           border: Border.all(
-                            color: Colors
-                                .deepPurpleAccent, // Choose your desired border color
+                            color: const Color.fromARGB(255, 221, 209,
+                                255), // Choose your desired border color
                             width: 3.0, // Choose your desired border width
                           ),
                         ),

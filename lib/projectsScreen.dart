@@ -17,7 +17,7 @@ class _ProfilePageState extends State<ProfilePage> {
   projetCard(lang, title, description, link, live) {
     return Container(
       width: MediaQuery.of(context).size.width * 0.8,
-      height: 210,
+      height: 220,
       child: Card(
         elevation: 20,
         color: Colors.deepPurple,
@@ -124,7 +124,7 @@ class _ProfilePageState extends State<ProfilePage> {
               projetCard(
                 'HTML,CSS,JS',
                 'Weather Application ',
-                'Weather Forecast Web App',
+                'Weather Web App',
                 'https://github.com/dakshraman/Weather_forecast_web_application',
                 'https://dakshraman.github.io/Weather_forecast_web_application/',
               ),
