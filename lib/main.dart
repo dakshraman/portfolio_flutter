@@ -26,6 +26,7 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -70,6 +71,7 @@ class _MyBottomNavBarState extends State<MyBottomNavBar> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),

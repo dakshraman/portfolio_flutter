@@ -2,6 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
@@ -15,67 +16,71 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   projetCard(lang, title, description, link, live) {
-    return Container(
-      width: MediaQuery.of(context).size.width * 0.8,
-      height: 220,
-      child: Card(
-        elevation: 20,
-        color: Colors.deepPurple,
-        child: Container(
-          margin: const EdgeInsets.only(left: 20, top: 30, right: 10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                lang,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                ),
-              ),
-              const Divider(
-                height: 10,
-              ),
-              Text(
-                title,
-                style: const TextStyle(
+    return SingleChildScrollView(
+      child: Container(
+        width: MediaQuery.of(context).size.width * 0.8,
+        height: 220,
+        child: Card( 
+          elevation: 20,
+          color: Colors.deepPurple,
+          child: Container(
+            margin: const EdgeInsets.only(left: 20, top: 30, right: 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  lang,
+                  style: const TextStyle(
                     color: Colors.white,
-                    fontSize: 30,
-                    fontWeight: FontWeight.w700),
-              ),
-              const Divider(
-                height: 3,
-              ),
-              Text(
-                description,
-                style: const TextStyle(color: Colors.white70, fontSize: 16),
-              ),
-              const Divider(
-                height: 10,
-              ),
-              Row(
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      launchUrlString(link);
-                    },
-                    icon: const Icon(
-                      FontAwesomeIcons.github,
-                      color: Colors.white,
-                    ),
+                    fontSize: 20,
                   ),
-                  IconButton(
-                    onPressed: () {
-                      launchUrlString(live);
-                    },
-                    icon: const Icon(
-                      FontAwesomeIcons.link,
+                ),
+                const Divider(
+                  height: 10,
+                ),
+                Text(
+                  title,
+                  style: const TextStyle(
                       color: Colors.white,
-                    ),
-                  )
-                ],
-              )
-            ],
+                      fontSize: 30,
+                      fontWeight: FontWeight.w700),
+                ),
+                const Divider(
+                  height: 3,
+                ),
+                Text(
+                  description,
+                  style: const TextStyle(color: Colors.white70, fontSize: 16),
+                ),
+                const Divider(
+                  height: 10,
+                ),
+                Expanded(
+                  child: Row(
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          launchUrlString(link);
+                        },
+                        icon: const Icon(
+                          FontAwesomeIcons.github,
+                          color: Colors.white,
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          launchUrlString(live);
+                        },
+                        icon: const Icon(
+                          FontAwesomeIcons.link,
+                          color: Colors.white,
+                        ),
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),
@@ -131,7 +136,7 @@ class _ProfilePageState extends State<ProfilePage> {
               projetCard(
                 'Python',
                 'Virtual Assistant',
-                'Virtual assistant for desktop',
+                'Virtual assistant for PC',
                 'https://github.com/dakshraman/Virtual-Assistant',
                 'https://github.com/dakshraman/Virtual-Assistant',
               ),
