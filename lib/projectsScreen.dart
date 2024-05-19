@@ -1,4 +1,4 @@
-// ignore_for_file: file_names, sized_box_for_whitespace, unused_import
+// ignore_for_file: file_names, sized_box_for_whitespace, unused_import, unnecessary_import
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +20,7 @@ class _ProfilePageState extends State<ProfilePage> {
       child: Container(
         width: MediaQuery.of(context).size.width * 0.8,
         height: 220,
-        child: Card( 
+        child: Card(
           elevation: 20,
           color: Colors.deepPurple,
           child: Container(

@@ -1,4 +1,4 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, unnecessary_import
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +15,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    final _screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
         backgroundColor: const Color.fromARGB(255, 221, 209, 255),
         appBar: CupertinoNavigationBar(
@@ -38,91 +37,86 @@ class _MyHomePageState extends State<MyHomePage> {
               borderRadius: BorderRadius.circular(20),
               color: Colors.deepPurple,
             ),
-            child: SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.deepPurple,
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(10),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.deepPurple,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(
+                            MediaQuery.of(context).size.height * .2),
+                        border: Border.all(
+                          color: const Color.fromARGB(255, 221, 209,
+                              255), // Choose your desired border color
+                          width: 3.0, // Choose your desired border width
+                        ),
+                      ),
                       child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(
-                              MediaQuery.of(context).size.height * .2),
-                          border: Border.all(
-                            color: const Color.fromARGB(255, 221, 209,
-                                255), // Choose your desired border color
-                            width: 3.0, // Choose your desired border width
-                          ),
-                        ),
-                        child: Container(
-                          width: MediaQuery.of(context).size.height * .3,
-                          height: MediaQuery.of(context).size.height * .3,
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                              alignment: Alignment.center,
-                              image: AssetImage('images/image.jpg'),
-                              fit: BoxFit.cover,
-                            ),
+                        width: MediaQuery.of(context).size.height * .3,
+                        height: MediaQuery.of(context).size.height * .3,
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                            alignment: Alignment.center,
+                            image: AssetImage('images/image.jpg'),
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(height: MediaQuery.of(context).size.height * .03),
-                  const Divider(
-                    thickness: 2,
-                  ),
-                  const Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Expanded(
-                            child: Text(
-                              "Raman Daksh",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 35,
-                            
-                              ),
-                            ),
+                ),
+                SizedBox(height: MediaQuery.of(context).size.height * .03),
+                const Divider(
+                  thickness: 2,
+                ),
+                const Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Raman Daksh",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 221, 209, 255),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 35,
                           ),
-                        ],
-                      ),
-                      Divider(
-                        thickness: 1,
-                        indent: 20,
-                        endIndent: 20,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "Developer",
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 221, 209, 255),
-                              fontWeight: FontWeight.bold,
-                              fontSize: 30,
-                            ),
+                        ),
+                      ],
+                    ),
+                    Divider(
+                      thickness: 1,
+                      indent: 20,
+                      endIndent: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Developer",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 221, 209, 255),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30,
                           ),
-                        ],
-                      ),
-                      Divider(
-                        thickness: 2,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+                        ),
+                      ],
+                    ),
+                    Divider(
+                      thickness: 2,
+                    ),
+                  ],
+                ),
+              ],
             ),
           ),
         )
