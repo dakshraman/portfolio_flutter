@@ -31,9 +31,6 @@ jobs:
       - name: Generate App Icons
         run: flutter pub run flutter_launcher_icons:main
 
-      - name: Build APK
-        run: flutter build apk --release
-
       - name: Build AAB (Android App Bundle)
         run: flutter build appbundle --release
 
