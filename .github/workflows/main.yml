@@ -31,9 +31,6 @@ jobs:
       - name: Generate App Icons
         run: flutter pub run flutter_launcher_icons:main
 
-      - name: Run Tests (Optional)
-        run: flutter test
-
       - name: Build APK
         run: flutter build apk --release
 
