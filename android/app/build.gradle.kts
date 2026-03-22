@@ -18,7 +18,6 @@ if (keystorePropertiesFile.exists()) {
 android {
     namespace = "com.dakshraman.portfolio"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = "27.0.12077973"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -53,8 +52,9 @@ android {
 
     buildTypes {
         release {
-            // Use the release signing configuration
-            signingConfig = signingConfigs.getByName("release")
+            if (keystorePropertiesFile.exists()) {
+                signingConfig = signingConfigs.getByName("release")
+            }
         }
     }
 }

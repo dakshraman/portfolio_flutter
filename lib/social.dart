@@ -2,7 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:portfolio_flutter/link_policy.dart';
 import 'package:portfolio_flutter/main.dart';
 
 class Social extends StatefulWidget {
@@ -62,7 +62,7 @@ class _SocialState extends State<Social> {
                           children: [
                             GestureDetector(
                               onTap: () {
-                                launchUrl(fb);
+                                launchSafeExternalUri(context, fb);
                               },
                               child: Image.asset(
                                 'images/facebook.png',
@@ -73,7 +73,7 @@ class _SocialState extends State<Social> {
                             const SizedBox(width: 10),
                             GestureDetector(
                               onTap: () {
-                                launchUrl(tw);
+                                launchSafeExternalUri(context, tw);
                               },
                               child: Image.asset(
                                 'images/twitter.png',
@@ -84,7 +84,7 @@ class _SocialState extends State<Social> {
                             const SizedBox(width: 10),
                             GestureDetector(
                               onTap: () {
-                                launchUrl(ig);
+                                launchSafeExternalUri(context, ig);
                               },
                               child: Image.asset(
                                 'images/instagram.png',
@@ -95,7 +95,7 @@ class _SocialState extends State<Social> {
                             const SizedBox(width: 10),
                             GestureDetector(
                               onTap: () {
-                                launchUrl(youtube);
+                                launchSafeExternalUri(context, youtube);
                               },
                               child: Image.asset(
                                 'images/youtube.png',
@@ -106,7 +106,12 @@ class _SocialState extends State<Social> {
                             const SizedBox(width: 10),
                             GestureDetector(
                               onTap: () {
-                                launchUrl(git);
+                                launchSafeExternalUri(
+                                  context,
+                                  git,
+                                  blockedMessage:
+                                      'GitHub is disabled in the Android app build to comply with Play policy.',
+                                );
                               },
                               child: Image.asset(
                                 'images/github.png',
@@ -117,7 +122,7 @@ class _SocialState extends State<Social> {
                             const SizedBox(width: 10),
                             GestureDetector(
                               onTap: () {
-                                launchUrl(skype);
+                                launchSafeExternalUri(context, skype);
                               },
                               child: Image.asset(
                                 'images/skype.png',
@@ -128,7 +133,7 @@ class _SocialState extends State<Social> {
                             const SizedBox(width: 10),
                             GestureDetector(
                               onTap: () {
-                                launchUrl(telegram);
+                                launchSafeExternalUri(context, telegram);
                               },
                               child: Image.asset(
                                 'images/telegram.png',
@@ -139,7 +144,7 @@ class _SocialState extends State<Social> {
                             const SizedBox(width: 10),
                             GestureDetector(
                               onTap: () {
-                                launchUrl(li);
+                                launchSafeExternalUri(context, li);
                               },
                               child: Image.asset(
                                 'images/linkedin.png',
@@ -150,7 +155,7 @@ class _SocialState extends State<Social> {
                             const SizedBox(width: 10),
                             GestureDetector(
                               onTap: () {
-                                launchUrl(email);
+                                launchSafeExternalUri(context, email);
                               },
                               child: Image.asset(
                                 'images/email.png',
