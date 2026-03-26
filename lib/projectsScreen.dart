@@ -3,8 +3,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:portfolio_flutter/link_policy.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key, required String title});
@@ -14,21 +12,11 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  Future<void> _openExternalLink(String url) async {
-    await launchSafeExternalUri(
-      context,
-      Uri.parse(url),
-      blockedMessage:
-          'Repository and download links are disabled in the Android app build.',
-    );
-  }
-
-  Widget projetCard(String lang, String title, String description, String link,
-      {String? liveDemo}) {
+  Widget projetCard(String lang, String title, String description) {
     return SingleChildScrollView(
       child: Container(
         width: MediaQuery.of(context).size.width * 0.8,
-        height: 220,
+        height: 160,
         child: Card(
           elevation: 20,
           color: Colors.deepPurple,
@@ -64,31 +52,6 @@ class _ProfilePageState extends State<ProfilePage> {
                 const Divider(
                   height: 10,
                 ),
-                Expanded(
-                  child: Row(
-                    children: [
-                      IconButton(
-                        onPressed: () {
-                          _openExternalLink(link);
-                        },
-                        icon: const Icon(
-                          FontAwesomeIcons.github,
-                          color: Colors.white,
-                        ),
-                      ),
-                      if (liveDemo != null)
-                        IconButton(
-                          onPressed: () {
-                            _openExternalLink(liveDemo);
-                          },
-                          icon: const Icon(
-                            FontAwesomeIcons.link,
-                            color: Colors.white,
-                          ),
-                        )
-                    ],
-                  ),
-                )
               ],
             ),
           ),
@@ -119,35 +82,26 @@ class _ProfilePageState extends State<ProfilePage> {
                 'Flutter',
                 'Messager',
                 'Chatting Application',
-                'https://github.com/dakshraman/Messager',
-                liveDemo: 'https://dakshraman.github.io/Messager/',
               ),
               projetCard(
                 'Flutter',
                 'Portfolio',
                 'A Portfolio App',
-                'https://github.com/dakshraman/portfolio_flutter',
               ),
               projetCard(
                 'Flutter',
                 'Calculator',
                 'A Calculator App',
-                'https://github.com/dakshraman/Calculator',
               ),
               projetCard(
                 'HTML,CSS,JS',
                 'Weather Application ',
                 'Weather Web App',
-                'https://github.com/dakshraman/Weather_forecast_web_application',
-                liveDemo:
-                    'https://dakshraman.github.io/Weather_forecast_web_application/',
               ),
               projetCard(
                 'Python',
                 'Virtual Assistant',
                 'Virtual assistant for PC',
-                'https://github.com/dakshraman/Virtual-Assistant',
-                liveDemo: 'https://github.com/dakshraman/Virtual-Assistant',
               ),
             ],
           ),
